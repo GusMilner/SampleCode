@@ -33,7 +33,7 @@ skip_before_filter :verify_authenticity_token
  	respond_to do |format|
  		if @profile.update_attributes(profile_params)
  			format.html { redirect_to root_path, notice: 'Post was successfully updated.' }
-      		format.json { head :no_content } # 204 No Content
+      		format.json { head :no_content }
  		end
  	end
 
@@ -50,7 +50,7 @@ skip_before_filter :verify_authenticity_token
 
  end
 
- # Never trust parameters from the scary internet, only allow the white list through.
+ # Allowing certain parameters through.
  def profile_params
       params.require(:profile).permit(:avatar, :age, :from, :heightfeet, :heightinches, :weight)
  end

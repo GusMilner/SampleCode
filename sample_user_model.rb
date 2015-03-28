@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   
 
 private
+  #Creates an instance in the profile table associated with the user id
   def create_profile
     self.profile = Profile.create(user_id: id)
   end
